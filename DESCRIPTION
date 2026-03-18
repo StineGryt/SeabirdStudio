@@ -21,3 +21,4 @@ Depends:
 URL: https://github.com/StineGryt/SeabirdStudio
 BugReports: https://github.com/StineGryt/SeabirdStudio/issues
 RoxygenNote: 7.3.3
+Roxygen: list(markdown = TRUE)
