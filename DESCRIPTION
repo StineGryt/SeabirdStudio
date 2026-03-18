@@ -1,0 +1,20 @@
+Package: SeabirdStudio
+Type: Package
+Title: Explore and Compare Seabird Colony Compositions
+Version: 0.1.0
+Authors@R: c(
+    person(
+      "Stine", "Grytøyr",
+      email = "stgry5517@uib.no",
+      role = c("aut", "cre")
+    )
+  )
+Description: Tools for the exploratory analysis of seabird colony data, specifically curated from a subset of the JNCC Seabirds Count. The package provides functions to calculate species richness, relative contributions, and similarity indices between assemblages. Includes an interactive Shiny app for visual comparison of different colonies.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
+Depends: 
+    R (>= 3.5)
