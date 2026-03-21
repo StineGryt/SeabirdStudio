@@ -18,7 +18,9 @@ seabird_counts <- raw |>
     count = `Seabirds Count adjusted count`,
   ) |>
   mutate(count = as.numeric(count)) |>
-  filter(!is.na(count), count > 0)
+  filter(!is.na(count), count > 0) |>
+  group_by(colony, species) |>
+  summarise(count = sum(count), .groups = "drop")
 
 # ---SUBSET---
 # Keep top 10 species

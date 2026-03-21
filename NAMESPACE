@@ -3,4 +3,5 @@
 export(colony_similarity)
 export(list_colonies)
 export(relative_abundance)
+export(run_seabird_app)
 export(species_richness)
