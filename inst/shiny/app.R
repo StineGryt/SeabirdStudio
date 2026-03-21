@@ -8,6 +8,8 @@ ui <- fluidPage(
 
   titlePanel("Seabird Colony Comparison"),
 
+  h4("Compare seabird community composition between sites"),
+
   sidebarLayout(
     sidebarPanel(
       selectInput(
@@ -34,31 +36,51 @@ ui <- fluidPage(
 server <- function(input, output) {
 
   output$plot1 <- renderPlot({
+
     df <- relative_abundance(seabird_counts, input$colony1)
 
-    barplot(
-      df$prop,
-      names.arg = df$species,
-      las = 2,
-      main = input$colony1
-    )
+    ggplot2::ggplot(df, ggplot2::aes(
+      x = reorder(species, prop),
+      y = prop
+    )) +
+      ggplot2::geom_col(fill = "steelblue") +
+      ggplot2::coord_flip() +
+      ggplot2::labs(
+        title = input$colony1,
+        x = "Species",
+        y = "Relative abundance"
+      ) +
+      ggplot2::theme_minimal()
+
   })
 
   output$plot2 <- renderPlot({
+
     df <- relative_abundance(seabird_counts, input$colony2)
 
-    barplot(
-      df$prop,
-      names.arg = df$species,
-      las = 2,
-      main = input$colony2
-    )
+    ggplot2::ggplot(df, ggplot2::aes(
+      x = reorder(species, prop),
+      y = prop
+    )) +
+      ggplot2::geom_col(fill = "darkgreen") +
+      ggplot2::coord_flip() +
+      ggplot2::labs(
+        title = input$colony2,
+        x = "Species",
+        y = "Relative abundance"
+      ) +
+      ggplot2::theme_minimal()
+
   })
 
   output$similarity <- renderText({
     sim <- colony_similarity(seabird_counts, input$colony1, input$colony2)
 
-    paste("Similarity (Bray-Curtis):", round(sim, 3))
+    paste0(
+      "Bray-Curtis similarity: ",
+      round(sim, 3),
+      " (0 = different, 1 = identical)"
+    )
   })
 }
 

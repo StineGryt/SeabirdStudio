@@ -1,0 +1,78 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# SeabirdStudio
+
+An R package for exploring and comparing seabird colony/site community composition.
+
+## Installation
+
+You can install SeabirdStudio from [GitHub](https://github.com/) with:
+
+
+# install.packages("pak")
+pak::pak("StineGryt/SeabirdStudio")
+
+
+## Included data
+
+The package includes a subset of seabird colony count data from the UK. 
+
+```{r}
+library(SeabirdStudio)
+data("seabird_counts")
+head(seabird_counts)
+```
+
+
+## Functions
+
+### List available sites
+
+```{r}
+list_colonies(seabird_counts)
+```
+
+
+### Species richness
+
+```{r}
+species_richness(seabird_counts, "Foula")
+```
+
+
+### Relative abundance
+
+```{r}
+relative_abundance(seabird_counts, "Ailsa Craig")
+```
+
+
+### Colony similarity (Bray-Curtis similarity index)
+
+```{r}
+colony_similarity(seabird_counts, "Lambay", "Foula")
+```
+
+
+## Shiny app
+Launch the interactive app:
+
+run_seabird_app()
+
+## Description
+
+This package provides simple tools for exploring seabird community composition and comparing colonies/seabird sites using ecological metrics.
+
