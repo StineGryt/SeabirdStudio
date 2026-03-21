@@ -14,7 +14,8 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: 
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    ggplot2
 Config/testthat/edition: 3
 Depends: 
     R (>= 3.5)
@@ -23,5 +24,6 @@ BugReports: https://github.com/StineGryt/SeabirdStudio/issues
 RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)
 Imports: 
-    ggplot2,
-    shiny
+    dplyr,
+    shiny,
+    tidyr

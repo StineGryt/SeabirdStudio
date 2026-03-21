@@ -1,4 +1,8 @@
 
+if(!requireNamespace("ggplot2", quietly = TRUE)) {
+  stop("Please install ggplot2 to run this app.")
+}
+
 library(shiny)
 library(devtools)
 devtools::install_github("StineGryt/SeabirdStudio")

@@ -76,3 +76,10 @@ run_seabird_app()
 
 This package provides simple tools for exploring seabird community composition and comparing colonies/seabird sites using ecological metrics.
 
+## Data source
+
+The dataset included in this package is a curated subset of seabird colony data from the Joint Nature Conservation Committee (JNCC) Seabirds Count programme.
+
+Source:
+https://jncc.gov.uk/our-work/seabirds-count/
+
