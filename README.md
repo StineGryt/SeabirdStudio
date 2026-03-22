@@ -10,8 +10,6 @@ composition.
 
 You can install SeabirdStudio from [GitHub](https://github.com/) with:
 
-# install.packages(“pak”)
-
 pak::pak(“StineGryt/SeabirdStudio”)
 
 ## Included data

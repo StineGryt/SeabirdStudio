@@ -21,8 +21,6 @@ An R package for exploring and comparing seabird colony/site community compositi
 
 You can install SeabirdStudio from [GitHub](https://github.com/) with:
 
-
-# install.packages("pak")
 pak::pak("StineGryt/SeabirdStudio")
 
 
